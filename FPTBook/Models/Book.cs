@@ -15,13 +15,9 @@ namespace FPTBook.Models
         public string Description { get; set; }
         [MaxLength(13)]
         public string ISBN { get; set; }
+        public DateTime DatePublished { get; set; } = DateTime.Now;
         [Required]
-        [DataType(DataType.Date)]
-        [Display(Name = "Date Published")]
-        public DateTime DatePublished { get; set; }
-        [Required]
-        [DataType(DataType.Currency)]
-        public int Price { get; set; }
+        public double Price { get; set; }
         [Display(Name = "Image URL")]
         public string ImageUrl { get; set; }
     }
