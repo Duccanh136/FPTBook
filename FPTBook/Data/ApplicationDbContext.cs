@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using FPTBook.Models;
 
 namespace FPTBook.Data
 {
@@ -12,5 +13,6 @@ namespace FPTBook.Data
             : base(options)
         {
         }
+        public DbSet<Book> Books { get; set; }
     }
 }
