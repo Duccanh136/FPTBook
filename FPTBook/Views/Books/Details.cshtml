@@ -1,60 +1,26 @@
-﻿@model FPTBook.Models.Book
+﻿@model Book
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Book</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Author)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Author)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ISBN)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ISBN)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DatePublished)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DatePublished)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageUrl)
-        </dd>
-    </dl>
+<div class="form-group">
+  <a asp-controller="Books" asp-action="Index" class="btn btn-primary">
+    Back to Index
+  </a>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+<div class="card" style="width:400px">
+  <img 
+    class="card-img-top" 
+    src= @Model.ImageUrl
+    alt="Book image">
+  <div class="card-body">
+    <h4 class="card-title">@Model.Title</h4>
+    <p class="card-text">Author: @Model.Author.ToString()</p>
+    <p class="card-text">Description: @Model.Description.ToString()</p>
+    <p class="card-text">ISBN: @Model.ISBN.ToString()</p>
+    <p class="card-text">Date Published: @Model.DatePublished.ToString("MM/dd/yyyy")</p>
+    <p class="card-text">Price: @Model.Price.ToString()</p>
+  </div>
 </div>

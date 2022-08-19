@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FPTBook.Models.Book>
+﻿@model IEnumerable<Book>
 
 @{
     ViewData["Title"] = "Index";
@@ -44,9 +44,9 @@
                 }
             </td>
             <td>
-                <button asp-action="Detail" asp-route-id="@item.Id" class="btn btn-info">Details</button>
+                <a asp-controller="Books" asp-action="Details" asp-route-id=@item.Id class="btn btn-info">Detail</a>
                 <a asp-controller="Books" asp-action="Delete" asp-route-id=@item.Id class="btn btn-danger">Delete</a>
-                <button asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Edit</button>
+                <a asp-controller="Books" asp-action="Edit" asp-route-id=@item.Id class="btn btn-success">Edit</a>
             </td>
         </tr>
 }
